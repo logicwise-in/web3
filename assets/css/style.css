@@ -903,7 +903,7 @@ html {
 /* Floating WhatsApp contact button */
 .whatsapp-float {
   position: fixed;
-  left: 22px;
+  right: 22px;
   bottom: 22px;
   z-index: 9999;
   display: flex;
@@ -931,5 +931,5 @@ html {
 .whatsapp-float span { display: block; }
 .whatsapp-float svg { display: block; width: 34px; height: 34px; flex: 0 0 auto; }
 @media (max-width: 600px) {
-  .whatsapp-float { left: 15px; bottom: 15px; width: 54px; height: 54px; }
+  .whatsapp-float { right: 15px; bottom: 15px; width: 54px; height: 54px; }
 }
