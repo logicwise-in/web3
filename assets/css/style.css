@@ -832,3 +832,69 @@ html {
 .brain-stage-caption strong{font-size:clamp(23px,2.4vw,31px);line-height:1.2;letter-spacing:-1px;color:#f5f3ef}
 @media(max-width:991px){.brain-stage{min-height:500px;max-width:650px;margin:10px auto 0}.brain-illustration{width:min(88%,400px)}}
 @media(max-width:600px){.brain-stage{min-height:430px}.brain-illustration{width:100%;max-width:360px}.brain-label{padding:9px 10px}.brain-label-top{top:8%;left:3%}.brain-label-bottom{right:3%;bottom:25%}.brain-label strong{font-size:11px}.brain-label span,.brain-stage-caption>span{font-size:9px}.brain-stage-caption{left:18px;right:18px;bottom:18px}.orbit-one{width:280px;height:140px}.orbit-two{width:300px;height:180px}}
+
+
+/* Premium, clearer Logic Wise brain-stage messaging */
+.brain-label {
+  gap: 6px;
+  padding: 14px 17px;
+  border: 1px solid #a77b35;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #21190dF5, #10100ff2);
+  box-shadow: 0 12px 32px #0008, inset 0 1px 0 #ffe4a033, 0 0 22px #ffc34a0c;
+  backdrop-filter: blur(12px);
+}
+.brain-label span {
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  color: #ffd780;
+}
+.brain-label strong {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -.25px;
+  color: #fffaf0;
+}
+.brain-label strong i {
+  color: var(--gold);
+  font-style: normal;
+  padding: 0 3px;
+}
+.brain-stage-caption {
+  padding-top: 18px;
+  border-top: 1px solid #ffc34a55;
+}
+.brain-stage-caption>span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 10px;
+  color: #ffd780;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+.brain-stage-caption>span:before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: var(--gold);
+  box-shadow: 0 0 10px #ffc34a99;
+}
+.brain-stage-caption strong {
+  display: block;
+  max-width: 320px;
+  font-size: clamp(27px, 2.8vw, 36px);
+  line-height: 1.12;
+  font-weight: 850;
+  letter-spacing: -1.25px;
+  background: linear-gradient(100deg, #fffaf0 10%, #ffd780 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@media(max-width:600px) {
+  .brain-label { padding: 10px 11px; }
+  .brain-label strong { font-size: 12px; }
+  .brain-stage-caption>span { font-size: 9px; letter-spacing: 1.4px; }
+  .brain-stage-caption strong { font-size: 28px; }
+}
