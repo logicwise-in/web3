@@ -929,6 +929,7 @@ html {
   box-shadow: 0 8px 22px rgba(0,0,0,.38);
 }
 .whatsapp-float span { display: block; }
+.whatsapp-float svg { display: block; width: 34px; height: 34px; flex: 0 0 auto; }
 @media (max-width: 600px) {
   .whatsapp-float { left: 15px; bottom: 15px; width: 54px; height: 54px; }
 }
