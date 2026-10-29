@@ -810,3 +810,25 @@ html {
   transition:none!important}
 }
 
+
+
+/* Original Logic Wise neural-brain hero art: image-free and responsive. */
+.brand-brain{display:inline-grid;place-items:center;width:44px;height:44px;flex:0 0 44px;border:1px solid #624a24;border-radius:12px;background:linear-gradient(145deg,#251b0b,#100f0c);color:var(--gold)}
+.brand-brain svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.footer-brain{width:40px;height:40px;flex-basis:40px;border-radius:9px}
+.footer-brain svg{width:31px;height:31px}
+.brain-stage{position:relative;min-height:530px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #49371d;border-radius:18px;background:radial-gradient(ellipse at center,#2b1d0c 0%,#14110c 45%,#0c0c0d 78%);box-shadow:0 24px 90px #0008}
+.brain-stage:before{content:"";position:absolute;inset:14px;border:1px solid #ffc34a18;border-radius:12px;pointer-events:none}
+.brain-glow{position:absolute;width:220px;height:220px;border-radius:50%;background:#ffb52a20;filter:blur(55px)}
+.brain-illustration{position:relative;z-index:2;width:min(100%,420px);height:auto;overflow:visible;filter:drop-shadow(0 0 16px #ffc34a16)}
+.brain-orbit{position:absolute;border:1px solid #ffc34a24;border-radius:50%;transform:rotate(-28deg)}
+.orbit-one{width:340px;height:170px}.orbit-two{width:390px;height:230px;transform:rotate(36deg);border-style:dashed;opacity:.7}
+.brain-label{position:absolute;z-index:3;display:flex;flex-direction:column;gap:4px;padding:12px 15px;border:1px solid #59421f;border-radius:8px;background:#11100de8;box-shadow:0 10px 35px #0005}
+.brain-label span,.brain-stage-caption>span{font-size:10px;letter-spacing:1.6px;color:var(--gold);font-weight:700}
+.brain-label strong{font-size:13px;color:#f5f3ef}
+.brain-label-top{top:13%;left:5%}.brain-label-bottom{right:4%;bottom:23%}
+.brain-stage-caption{position:absolute;z-index:3;left:25px;bottom:25px;right:25px;padding-top:16px;border-top:1px solid #49371d}
+.brain-stage-caption>span{display:block;margin-bottom:8px}
+.brain-stage-caption strong{font-size:clamp(23px,2.4vw,31px);line-height:1.2;letter-spacing:-1px;color:#f5f3ef}
+@media(max-width:991px){.brain-stage{min-height:500px;max-width:650px;margin:10px auto 0}.brain-illustration{width:min(88%,400px)}}
+@media(max-width:600px){.brain-stage{min-height:430px}.brain-illustration{width:100%;max-width:360px}.brain-label{padding:9px 10px}.brain-label-top{top:8%;left:3%}.brain-label-bottom{right:3%;bottom:25%}.brain-label strong{font-size:11px}.brain-label span,.brain-stage-caption>span{font-size:9px}.brain-stage-caption{left:18px;right:18px;bottom:18px}.orbit-one{width:280px;height:140px}.orbit-two{width:300px;height:180px}}
