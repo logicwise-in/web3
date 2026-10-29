@@ -3,11 +3,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/fireba
 import {
   getAuth,
   GoogleAuthProvider,
-  signInWithPopup,
   signInWithRedirect,
   getRedirectResult,
-  onAuthStateChanged,
-  signOut
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
 const firebaseConfig = {
@@ -27,8 +25,6 @@ if (button) {
   const provider = new GoogleAuthProvider();
   provider.setCustomParameters({ prompt: "select_account" });
 
-  const defaultButtonMarkup = button.innerHTML;
-  let currentUser = null;
   let busy = false;
 
   function showMessage(message) {
@@ -37,17 +33,9 @@ if (button) {
   }
 
   onAuthStateChanged(auth, user => {
-    currentUser = user;
-    if (user) {
-      const name = (user.displayName || user.email || "Account").split(" ")[0];
-      button.textContent = "Hi, " + name;
-      button.setAttribute("aria-label", "Signed in as " + (user.displayName || user.email) + ". Click to sign out.");
-      button.title = "Signed in with Google. Click to sign out.";
-    } else {
-      button.innerHTML = defaultButtonMarkup;
-      button.setAttribute("aria-label", "Create an account or continue with Google");
-      button.title = "Create an account or continue with Google";
-    }
+    button.textContent = "Account";
+    button.setAttribute("aria-label", user ? "Google account signed in" : "Continue to Google sign-in");
+    button.title = user ? "Signed in with Google" : "Continue to Google sign-in";
   });
 
   getRedirectResult(auth).catch(error => {
@@ -60,19 +48,8 @@ if (button) {
     busy = true;
     button.disabled = true;
     try {
-      if (currentUser) {
-        await signOut(auth);
-        return;
-      }
-      try {
-        await signInWithPopup(auth, provider);
-      } catch (error) {
-        if (error.code === "auth/popup-blocked" || error.code === "auth/popup closed by user") {
-          await signInWithRedirect(auth, provider);
-          return;
-        }
-        throw error;
-      }
+      await signInWithRedirect(auth, provider);
+      return;
     } catch (error) {
       console.error("Google sign-in error:", error);
       let message = "Could not sign in with Google. Please try again.";
