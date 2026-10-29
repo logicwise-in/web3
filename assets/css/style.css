@@ -903,7 +903,7 @@ html {
 /* Floating WhatsApp contact button */
 .whatsapp-float {
   position: fixed;
-  right: 22px;
+  left: 22px;
   bottom: 22px;
   z-index: 9999;
   display: flex;
@@ -931,5 +931,12 @@ html {
 .whatsapp-float span { display: block; }
 .whatsapp-float svg { display: block; width: 34px; height: 34px; flex: 0 0 auto; }
 @media (max-width: 600px) {
-  .whatsapp-float { right: 15px; bottom: 15px; width: 54px; height: 54px; }
+  .whatsapp-float { left: 15px; bottom: 15px; width: 54px; height: 54px; }
 }
+
+
+/* Google account action in the navigation */
+.account-button { cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:9px; white-space:nowrap; }
+.account-button svg { display:block; flex:0 0 18px; width:18px; height:18px; }
+.account-button:disabled { opacity:.75; cursor:wait; }
+@media(max-width:991px) { .navbar-nav .account-button { width:100%; } }
